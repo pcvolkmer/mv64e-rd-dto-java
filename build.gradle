@@ -20,31 +20,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-publishing {
-    repositories {
-        maven {
-            name = "GitDnpmDev"
-
-            def releasesRepoUrl = uri('https://git.dnpm.dev/api/packages/public/maven')
-            def snapshotsRepoUrl = uri('https://git.dnpm.dev/api/packages/public-snapshots/maven')
-            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
-
-            credentials(HttpHeaderCredentials) {
-                name = "Authorization"
-                value = "token ${dnpm_dev_token}"
-            }
-
-            authentication {
-                header(HttpHeaderAuthentication)
-            }
-        }
-    }
-
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            artifactId = archivesBaseName
-        }
-    }
-}
