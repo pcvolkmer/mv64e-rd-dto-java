@@ -23,6 +23,8 @@ public class SmallVariant {
     private VariantSegregationAnalysisCoding segregationAnalysis;
     private VariantSignificanceCoding significance;
     private VariantZygosityCoding zygosity;
+    private long startPosition;
+    private long endPosition;
 
     @JsonProperty("acmgClass")
     public ACMGClassCoding getAcmgClass() { return acmgClass; }
@@ -118,4 +120,14 @@ public class SmallVariant {
     public VariantZygosityCoding getZygosity() { return zygosity; }
     @JsonProperty("zygosity")
     public void setZygosity(VariantZygosityCoding value) { this.zygosity = value; }
+
+    @JsonProperty("startPosition")
+    public long getStartPosition() { return startPosition; }
+    @JsonProperty("startPosition")
+    public void setStartPosition(long value) { this.startPosition = value; }
+
+    @JsonProperty("endPosition")
+    public long getEndPosition() { return endPosition; }
+    @JsonProperty("endPosition")
+    public void getEndPosition(long value) { this.endPosition = value; }
 }
