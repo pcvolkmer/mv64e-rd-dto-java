@@ -19,7 +19,7 @@ jobs:
 
       # See: https://github.com/KohlbacherLab/dnpm-dip-api-gateway/blob/main/app/controllers/README.md#synthetic-json-data
       - name: Download synthetic rd patient record
-        run: curl -f -L https://dnpm-dip.net/api/rd/fake/data/patient-record -o ./src/test/resources/mv64e-rd-fake-patient.json
+        run: curl -f -L https://preview.dnpm-dip.net/api/rd/fake/data/patient-record -o ./src/test/resources/mv64e-rd-fake-patient.json
 
       - name: Run tests
         run: ./gradlew test
